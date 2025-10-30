@@ -7,13 +7,6 @@ import sys
 
 
 class RasterResource:
-    """Класс для работы с растровыми ресурсами.
-
-    Поддерживаемые операции:
-    - загрузка из файла (QImage / QPixmap)
-    - масштабирование с сохранением оригинала
-    - получение QBrush на основе шаблона
-    """
     def __init__(self, image=None):
         self.original = None
         self.pixmap = None
@@ -49,7 +42,6 @@ class RasterResource:
         return self.pixmap
 
     def create_brush(self, tile=True):
-        """Возвращает QBrush, созданную из текущего pixmap. Если pixmap пустой, возвращает None."""
         if self.pixmap is None:
             return None
         if tile:
